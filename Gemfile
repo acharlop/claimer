@@ -59,6 +59,7 @@ group :test, :development do
   gem 'guard-rspec', '~> 4.7'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'launchy'
