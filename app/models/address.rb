@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
 	# validation using google maps?
 	# validate: exists, uniquness, 
-	validates :street, :zip, :city, presence: true
+	validates :street, :zip, :city, :state, presence: true
 end
