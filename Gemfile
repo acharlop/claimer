@@ -50,7 +50,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test, :development do
   gem "rails-controller-testing", :git => "https://github.com/rails/rails-controller-testing"
-  gem "rspec-rails", "3.5.0.beta1"
+  gem 'rspec', '= 3.5.0.beta3'
+  gem 'rspec-core', '= 3.5.0.beta3'
+  gem 'rspec-expectations', '= 3.5.0.beta3'
+  gem 'rspec-mocks', '= 3.5.0.beta3'
+  gem 'rspec-support', '= 3.5.0.beta3'
+  gem 'rspec-rails', '= 3.5.0.beta3'
+  gem 'guard-rspec', '~> 4.7'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'shoulda'
