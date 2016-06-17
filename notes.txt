@@ -1,0 +1,3 @@
+Monkey patching: 	justinweiss.com/articles/3-ways-to-monkey-patch-without-making-a-mess//
+
+Rspec testing: webascender.com/Blog/ID/629/Testing-Rails-4-Apps-With-RSpec-3-Part-II
