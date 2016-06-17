@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :email do
     email "hello.me_1@email.com"
+    association :mailboxes, factory: :client, strategy: :build
 
     trait :valid_1 do
     	email "f.o.o.b.a.r@gmail.com"

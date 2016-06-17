@@ -17,4 +17,8 @@ RSpec.describe Client, type: :model do
   it 'should have many phone number' do
   	should have_many(:phones)
   end
+
+  it 'should have may email addresses' do
+  	should have_many(:emails)
+  end
 end

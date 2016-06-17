@@ -26,4 +26,8 @@ RSpec.describe Email, type: :model do
     expect(build(:email, description: "Work")).to be_valid
     expect(build(:email, description: nil)).to_not be_valid
   end
+
+  it 'should belong to mailbox polymorphic assoc' do
+    should belong_to(:mailboxes)
+  end
 end
