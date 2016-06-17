@@ -12,4 +12,9 @@ RSpec.describe Address, :type => :model do
   	expect(build(:address, state:  nil)).to_not be_valid
 	end
 
+	it 'zip must be between 10000 & 99950' do
+		expect(build(:address, zip: 	9999)).to_not be_valid
+		expect(build(:address, zip:  99951)).to_not be_valid
+	end
+
 end

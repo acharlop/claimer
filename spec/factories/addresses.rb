@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :address do
     street "123 noplace street"
-    zip 1111
+    zip 11111
     city "Bumblescrew"
 
     trait :apartment do
