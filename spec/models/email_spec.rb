@@ -21,4 +21,9 @@ RSpec.describe Email, type: :model do
   	expect(build(:email, :invld_6)).to_not be_valid
   	expect(build(:email, :invld_7)).to_not be_valid
   end
+
+  it 'must have a description' do
+    expect(build(:email, description: "Work")).to be_valid
+    expect(build(:email, description: nil)).to_not be_valid
+  end
 end
