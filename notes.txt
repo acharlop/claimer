@@ -6,4 +6,4 @@ Rspec testing: webascender.com/Blog/ID/629/Testing-Rails-4-Apps-With-RSpec-3-Par
 ---------------------------------
 Need to test before implementing
 
-Address validation: https://github.com/alexreisner/geocoder
+Address validation / uniqueness: https://github.com/alexreisner/geocoder
