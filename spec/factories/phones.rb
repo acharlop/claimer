@@ -2,6 +2,8 @@ FactoryGirl.define do
   factory :phone do
     number "9175750123"
     description "Cell"
+    association :phone_numbers, factory: :client, strategy: :build
+
 
     trait :dash do
     	number "917-575-0123"

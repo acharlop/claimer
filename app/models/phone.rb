@@ -1,7 +1,8 @@
 class Phone < ApplicationRecord
+	belongs_to :phone_numbers, polymorphic: true
 
-	validate :valid_phone_number
 	validates :number, presence: true
+	validate :valid_phone_number
 
 	before_save :case_cleanup
 

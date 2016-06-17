@@ -17,4 +17,7 @@ RSpec.describe Phone, type: :model do
   	expect(build(:phone, :error_short)).to_not be_valid
   end
   
+  it 'should belong to client' do
+    should belong_to(:phone_numbers)
+  end
 end
