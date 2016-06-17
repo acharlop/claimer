@@ -9,7 +9,7 @@ class Address < ApplicationRecord
 	private
 	def case_cleanup
 		self.street.titleize!
-		self.apartment.titleize!
+		self.apartment.titleize! if self.apartment
 		self.city.titleize!
 		self.state.upcase!
 	end

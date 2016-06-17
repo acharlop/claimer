@@ -9,4 +9,8 @@ RSpec.describe Client, type: :model do
   	expect(build(:client, first: nil)).to_not be_valid
   	expect(build(:client, last:  nil)).to_not be_valid
   end
+
+  it 'must have a home address' do
+  	expect(build(:client, home_address:  nil)).to_not be_valid
+  end
 end
