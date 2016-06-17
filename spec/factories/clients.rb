@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :client do
-    first "MyString"
-    last "MyString"
+    first "Bobs"
+    last "Burgers"
   end
 end
