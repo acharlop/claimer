@@ -9,4 +9,8 @@ RSpec.describe Position, type: :model do
   	expect(build(:position, name: "something awesome")).to be_valid
   	expect(build(:position, name: nil)).to_not be_valid
   end
+
+  it 'has many contacts' do
+  	should have_many(:contacts)
+  end
 end

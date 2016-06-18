@@ -1,4 +1,6 @@
 class Position < ApplicationRecord
+	has_many :contacts
+	
 	validates :name, presence: true
 
 	before_save :case_cleanup

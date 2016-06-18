@@ -13,6 +13,10 @@ RSpec.describe Company, type: :model do
   	should have_many(:emails)
   end
 
+  it 'has many contacts' do
+    should have_many(:contacts)
+  end
+
   it 'belongs to company_type' do
   	should belong_to(:company_type)
   end

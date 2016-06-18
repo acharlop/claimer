@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618052815) do
+ActiveRecord::Schema.define(version: 20160618055637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 20160618052815) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "first",       null: false
+    t.string   "last",        null: false
+    t.integer  "position_id"
+    t.integer  "company_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_contacts_on_company_id", using: :btree
+    t.index ["first"], name: "index_contacts_on_first", using: :btree
+    t.index ["last"], name: "index_contacts_on_last", using: :btree
+    t.index ["position_id"], name: "index_contacts_on_position_id", using: :btree
   end
 
   create_table "emails", force: :cascade do |t|
@@ -101,6 +114,8 @@ ActiveRecord::Schema.define(version: 20160618052815) do
 
   add_foreign_key "clients", "addresses"
   add_foreign_key "companies", "company_types"
+  add_foreign_key "contacts", "companies"
+  add_foreign_key "contacts", "positions"
   add_foreign_key "losses", "addresses"
   add_foreign_key "losses", "loss_types"
 end
