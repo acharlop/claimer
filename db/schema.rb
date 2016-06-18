@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618034757) do
+ActiveRecord::Schema.define(version: 20160618043757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20160618034757) do
     t.index ["address_id"], name: "index_clients_on_address_id", using: :btree
     t.index ["first"], name: "index_clients_on_first", using: :btree
     t.index ["last"], name: "index_clients_on_last", using: :btree
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "company_type_id"
+    t.index ["company_type_id"], name: "index_companies_on_company_type_id", using: :btree
+    t.index ["name"], name: "index_companies_on_name", using: :btree
   end
 
   create_table "company_types", force: :cascade do |t|
@@ -84,6 +93,7 @@ ActiveRecord::Schema.define(version: 20160618034757) do
   end
 
   add_foreign_key "clients", "addresses"
+  add_foreign_key "companies", "company_types"
   add_foreign_key "losses", "addresses"
   add_foreign_key "losses", "loss_types"
 end

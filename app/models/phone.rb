@@ -11,7 +11,7 @@ class Phone < ApplicationRecord
 	private
 
 	def case_cleanup
-		self.description.titleize!
+		self.description.titleize! if self.description
 	end
 
 
