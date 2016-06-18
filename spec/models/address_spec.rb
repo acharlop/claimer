@@ -17,4 +17,11 @@ RSpec.describe Address, :type => :model do
 		expect(build(:address, zip:  99951)).to_not be_valid
 	end
 
+	it 'has one client' do
+		should have_one(:client)
+	end
+
+	it 'has one loss' do
+		should have_one(:loss)
+	end
 end

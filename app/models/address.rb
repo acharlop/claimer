@@ -1,5 +1,6 @@
 class Address < ApplicationRecord
 	has_one :client
+	has_one :loss
 
 	validates :street, :zip, :city, :state, presence: true
 	validates :zip, numericality: { greater_than_or_equal_to: 10000, less_than: 99950 }

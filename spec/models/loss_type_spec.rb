@@ -9,5 +9,8 @@ RSpec.describe LossType, type: :model do
   	expect(build(:loss_type, name: "Test")).to  be_valid
   	expect(build(:loss_type, name: nil)).to_not be_valid
   end
-  
+
+  it 'can belong to a loss' do
+  	should have_one(:loss)
+  end
 end
