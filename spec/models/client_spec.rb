@@ -14,6 +14,10 @@ RSpec.describe Client, type: :model do
   	expect(build(:client, home_address:  nil)).to_not be_valid
   end
 
+  it 'belongs to home_address' do
+    should belong_to(:home_address)
+  end
+
   it 'should have many phone number' do
   	should have_many(:phones)
   end
