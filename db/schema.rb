@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617215107) do
+ActiveRecord::Schema.define(version: 20160618015847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20160617215107) do
     t.string   "mailboxes_type"
     t.integer  "mailboxes_id"
     t.index ["mailboxes_type", "mailboxes_id"], name: "index_emails_on_mailboxes_type_and_mailboxes_id", using: :btree
+  end
+
+  create_table "loss_types", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_loss_types_on_name", using: :btree
   end
 
   create_table "phones", force: :cascade do |t|
