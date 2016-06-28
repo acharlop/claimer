@@ -1,8 +1,8 @@
 class Contact < ApplicationRecord
-	has_many :phones, as: :phone_numbers
+	has_many :phones, as: :phone_user
 	has_many :emails, as: :mailboxes
   belongs_to :position
-  belongs_to :company
+  has_one :company, as: :company_list
 
   validates :first, :last, presence: true
 

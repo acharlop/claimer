@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618055637) do
+ActiveRecord::Schema.define(version: 20160620195044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,13 @@ ActiveRecord::Schema.define(version: 20160618055637) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "name",              null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "company_type_id"
+    t.string   "company_list_type"
+    t.integer  "company_list_id"
+    t.index ["company_list_type", "company_list_id"], name: "index_companies_on_company_list_type_and_company_list_id", using: :btree
     t.index ["company_type_id"], name: "index_companies_on_company_type_id", using: :btree
     t.index ["name"], name: "index_companies_on_name", using: :btree
   end
@@ -96,13 +99,13 @@ ActiveRecord::Schema.define(version: 20160618055637) do
   end
 
   create_table "phones", force: :cascade do |t|
-    t.string   "number",                              null: false
-    t.string   "description",        default: "Cell", null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "phone_numbers_type"
-    t.integer  "phone_numbers_id"
-    t.index ["phone_numbers_type", "phone_numbers_id"], name: "index_phones_on_phone_numbers_type_and_phone_numbers_id", using: :btree
+    t.string   "number",                           null: false
+    t.string   "description",     default: "Cell", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "phone_user_type"
+    t.integer  "phone_user_id"
+    t.index ["phone_user_type", "phone_user_id"], name: "index_phones_on_phone_user_type_and_phone_user_id", using: :btree
   end
 
   create_table "positions", force: :cascade do |t|

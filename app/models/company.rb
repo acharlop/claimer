@@ -1,9 +1,10 @@
 class Company < ApplicationRecord
+	belongs_to :company_list, polymorphic: true
+	belongs_to :company_type
+
 	has_many :phones, as: :phone_numbers
 	has_many :emails, as: :mailboxes
-	has_many :contacts
 
-	belongs_to :company_type
 
 	validates :name, presence: true
 
